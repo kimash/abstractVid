@@ -2,10 +2,14 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-    player.loadMovie("cars.mov");
-    player.setLoopState(OF_LOOP_PALINDROME);
-    player.play();
-    ofBackground(0);
+    if(!player.loadMovie("cars.mov"))   {
+        ofLogError("Video failed to load!");
+    }
+    else    {
+        player.setLoopState(OF_LOOP_PALINDROME);
+        player.play();
+        ofBackground(0);
+    }
 }
 
 //--------------------------------------------------------------
